@@ -22,7 +22,9 @@ export default function DashboardHome({setCurrentView}) {
                     <button 
                     onClick={() => setCurrentView('saved')}
                     className={`py-3 rounded-lg px-3 w-full font-semibold text-sm text-[#696FC7] border-[#696FC7] border hover:bg-[#696FC7] hover:text-[#fff] cursor-pointer`}>Show saved passwords</button>
-                    <button className={`py-3 rounded-lg px-3 w-full font-semibold text-sm text-[#696FC7] border-[#696FC7] border hover:bg-[#696FC7] hover:text-[#fff] cursor-pointer`}>Delete saved password</button>
+                    <button 
+                    onClick={() => setCurrentView('delete')}
+                    className={`py-3 rounded-lg px-3 w-full font-semibold text-sm text-[#696FC7] border-[#696FC7] border hover:bg-[#696FC7] hover:text-[#fff] cursor-pointer`}>Delete saved password</button>
                 </div>
             </section>
         </>
