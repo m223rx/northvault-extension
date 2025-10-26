@@ -57,14 +57,14 @@
    ```
 
 2. **Install dependencies**
-  ```
+   ```
    npm install
-  ```
+   ```
 
 3. **Build the React app for Chrome Extension**  
-  ```
+   ```
    npm run build
-  ```
+   ```
 
 4. **Load the extension in Chrome**  
   - Open chrome://extensions/
