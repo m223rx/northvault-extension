@@ -27,10 +27,10 @@ export default function DashboardPage({ userConfig, getUserConfig, setIsLoading,
             case 'delete':
                 return <DeletePassword setCurrentView={setCurrentView} userConfig={userConfig} getUserConfig={getUserConfig} setIsLoading={setIsLoading} />
             case 'settings':
-                return <SettingsPage setCurrentView={setCurrentView} />
+                return <SettingsPage setCurrentView={setCurrentView} userConfig={userConfig} getUserConfig={getUserConfig} setIsLoading={setIsLoading} />
 
             default:
-                return <DashboardHome setCurrentView={setCurrentView} />
+                return <DashboardHome setCurrentView={setCurrentView} userConfig={userConfig} />
         }
     }
 
