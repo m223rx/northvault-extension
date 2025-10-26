@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Eye, EyeOff, Facebook, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Eye, EyeOff, Facebook, Search, X } from 'lucide-react'
 import React, { useState } from 'react'
 
 export default function SavedPasswords({ setCurrentView }) {
@@ -19,13 +19,21 @@ export default function SavedPasswords({ setCurrentView }) {
                     <ChevronLeft className='h-5 w-5' />
                     <p className='text-sm'>Go Back</p>
                 </button>
+                <div className='relative border p-2 rounded-lg border-[#696FC7] outline-none flex flex-row items-center justify-between mt-1'>
+                    <input type='text' placeholder='service...' className='w-full outline-none' />
+                    <div className='flex flex-row items-center justify-center gap-3 absolute top-0 right-0 h-[100%]'>
+                        <button className='absolute top-0 right-0 px-2 bg-[#696FC7] h-full rounded-tr-lg rounded-br-lg cursor-pointer'>
+                            <Search className='text-[#fff]'/>
+                        </button>
+                    </div>
+                </div>
                 <div className='flex flex-col gap-2 mt-5 overflow-y-scroll'>
                     {data.map((item, index) => (
                         <div
                             key={index}
                             onClick={() => setIsShown(!isShown)}
                             className='w-full h-15 border border-[#696FC7] rounded-lg flex flex-row items-center justify-between gap-1 cursor-pointer'>
-                            <div className='w-20 h-full flex items-center justify-center bg-[#696FC7] rounded-tl-lg rounded-bl-lg'>
+                            <div className='w-20 h-full flex items-center justify-center bg-[#696FC7] rounded-tl-lg rounded-bl-lg rounded-br-4xl'>
                                 <item.icon className='h-7 w-7 text-[#fff]' />
                             </div>
                             <div className='w-[100%] flex flex-col'>

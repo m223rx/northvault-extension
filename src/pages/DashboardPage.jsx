@@ -4,11 +4,17 @@ import DashboardHome from "../components/DashboardHome";
 import SaveNewPassword from "./SaveNewPassword";
 import SavedPasswords from "./SavedPasswords";
 import DeletePassword from "./DeletePassword";
+import SettingsPage from "./SettingsPage";
 
 export default function DashboardPage({ setActivePage }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState(false);
     const [currentView, setCurrentView] = useState('home');
+
+    const handleSettings = () => {
+        setIsOpen(!isOpen);
+        setCurrentView('settings');
+    }
 
     const renderPage = () => {
         switch (currentView) {
@@ -20,9 +26,11 @@ export default function DashboardPage({ setActivePage }) {
                 return <SavedPasswords setCurrentView={setCurrentView} />
             case 'delete':
                 return <DeletePassword setCurrentView={setCurrentView} />
+            case 'settings':
+                return <SettingsPage setCurrentView={setCurrentView} />
 
             default:
-                break;
+                return <DashboardHome setCurrentView={setCurrentView} />
         }
     }
 
@@ -47,7 +55,7 @@ export default function DashboardPage({ setActivePage }) {
                             <h1 className="text-lg font-bold mb-3 text-[#696FC7] ">Settings</h1>
                             <button
                                 className="gray-900 w-full flex font-bold text-xs hover:underline cursor-pointer"
-                                onClick={() => setActivePage("changePassword")}
+                                onClick={() => handleSettings()}
                             >
                                 Change Master Password
                             </button>

@@ -21,7 +21,7 @@ export default function DeletePassword({ setCurrentView }) {
                         <div
                             key={index}
                             className='w-full h-15 border border-[#696FC7] rounded-lg flex flex-row items-center justify-between gap-1'>
-                            <div className='w-25 h-full flex items-center justify-center bg-[#696FC7] rounded-tl-lg rounded-bl-lg'>
+                            <div className='w-25 h-full flex items-center justify-center bg-[#696FC7] rounded-tl-lg rounded-bl-lg rounded-br-4xl'>
                                 <item.icon className='h-7 w-7 text-[#fff]' />
                             </div>
                             <div className='w-full flex flex-col'>
@@ -29,8 +29,8 @@ export default function DeletePassword({ setCurrentView }) {
                                 <p className='text-xs font-bold text-[#696FC7]'>{item.service}</p>
                             </div>
                             <div className='h-full flex items-center justify-center w-23'>
-                                <button className='w-full bg-[#ff0000]/75 h-full flex items-center justify-center rounded-tr-lg rounded-br-lg cursor-pointer'>
-                                    <X className='text-[#fff]' />
+                                <button className='w-6 bg-[#ff0000]/75 h-6 flex items-center justify-center rounded-full cursor-pointer'>
+                                    <X className='text-[#fff] p-1' />
                                 </button>
                             </div>
                         </div>
