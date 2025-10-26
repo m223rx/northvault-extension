@@ -33,7 +33,6 @@ export default function SignupPage({ setActivePage, setIsLoading }) {
         }
 
         try {
-            // Check if user already exists
             const storedConfigJSON = localStorage.getItem('userConfig');
             if (storedConfigJSON) {
                 const storedConfig = JSON.parse(storedConfigJSON);
@@ -76,7 +75,7 @@ export default function SignupPage({ setActivePage, setIsLoading }) {
                 <label className='text-sm font-semibold text-[#696FC7]'>Username</label>
                 <input
                     type="text"
-                    placeholder='m223rx'
+                    placeholder='username'
                     className='border p-2 rounded-lg border-[#696FC7] outline-none'
                     onChange={(e) => setUsername(e.target.value)}
                 />
