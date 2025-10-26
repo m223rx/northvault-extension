@@ -57,22 +57,22 @@
    ```
 
 2. **Install dependencies**  
-- npm install
+  - npm install
 
 3. **Build the React app for Chrome Extension**  
-- npm run build
+  - npm run build
 
 4. **Load the extension in Chrome**  
-- Open chrome://extensions/
+  - Open chrome://extensions/
 
-- Enable Developer mode
+  - Enable Developer mode
 
-- Click Load unpacked and select the build folder
+  - Click Load unpacked and select the build folder
 
 5. **Use NorthVault**  
-- Click the extension icon in Chrome to open the popup
-- Sign up with a username and master password
-- Save, view, or delete passwords directly in the extension
+  - Click the extension icon in Chrome to open the popup
+  - Sign up with a username and master password
+  - Save, view, or delete passwords directly in the extension
 
 ---
 
