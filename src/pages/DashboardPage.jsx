@@ -1,12 +1,12 @@
 import { Settings } from "lucide-react";
 import React, { useState } from "react";
 import DashboardHome from "../components/DashboardHome";
-import SaveNewPassword from "./SaveNewPassword";
-import SavedPasswords from "./SavedPasswords";
-import DeletePassword from "./DeletePassword";
-import SettingsPage from "./SettingsPage";
+import SaveNewPassword from "../components/SaveNewPassword";
+import SavedPasswords from "../components/SavedPasswords";
+import DeletePassword from "../components/DeletePassword";
+import SettingsPage from "../components/SettingsPage";
 
-export default function DashboardPage({ setActivePage }) {
+export default function DashboardPage({ userConfig, getUserConfig, setIsLoading, userVault }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState(false);
     const [currentView, setCurrentView] = useState('home');
@@ -19,13 +19,13 @@ export default function DashboardPage({ setActivePage }) {
     const renderPage = () => {
         switch (currentView) {
             case 'home':
-                return <DashboardHome setCurrentView={setCurrentView} />
+                return <DashboardHome setCurrentView={setCurrentView} userConfig={userConfig} />
             case 'save':
-                return <SaveNewPassword setCurrentView={setCurrentView} />
+                return <SaveNewPassword setCurrentView={setCurrentView} userConfig={userConfig} getUserConfig={getUserConfig} setIsLoading={setIsLoading} />
             case 'saved':
-                return <SavedPasswords setCurrentView={setCurrentView} />
+                return <SavedPasswords setCurrentView={setCurrentView} userConfig={userConfig} getUserConfig={getUserConfig} setIsLoading={setIsLoading} />
             case 'delete':
-                return <DeletePassword setCurrentView={setCurrentView} />
+                return <DeletePassword setCurrentView={setCurrentView} userConfig={userConfig} getUserConfig={getUserConfig} setIsLoading={setIsLoading} />
             case 'settings':
                 return <SettingsPage setCurrentView={setCurrentView} />
 
@@ -36,8 +36,8 @@ export default function DashboardPage({ setActivePage }) {
 
     return (
         <>
-            <div className="relative rounded-lg bg-[#fff] shadow-md w-full h-[100%] flex flex-col flex-1 shadow-md">
-                <header className="relative w-full flex px-2 py-2 bg-gray-900 text-white shadow-md rounded-tl-lg rounded-tr-lg">
+            <div className="relative bg-[#fff] shadow-md w-full h-[100%] flex flex-col flex-1 shadow-md">
+                <header className="relative w-full flex px-2 py-2 bg-gray-900 text-white shadow-md">
                     <div className="flex flex-1 flex-row justify-between items-center">
                         <h1 className="text-xl font-bold tracking-wide">
                             North<span className="text-[#696FC7]">Vault</span>
